@@ -1,0 +1,13 @@
+#kamke-cliker{
+    border: none;
+    background-image: url(../Visual/Imagens/reinaldo1.jpg);
+    background-size: 100%;
+    width: 100%;
+    max-width: 20%;
+    height: 25vmax;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: pink;
+}
