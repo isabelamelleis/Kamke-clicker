@@ -1,13 +1,22 @@
+#div-botao-kamke-clicker {
+
+}
+
 #kamke-cliker{
+    position: absolute; 
+    left: 3%;
     border: none;
-    background-image: url(../Visual/Imagens/reinaldo1.jpg);
+    background-image: url(../visual/reinaldo1.jpg);
     background-size: 100%;
     width: 100%;
     max-width: 20%;
     height: 25vmax;
-    background-repeat: no-repeat;
 }
 
-body {
-    background-color: pink;
+#TITULO {
+    text-align: center;
+}
+
+#SUBTITULO {
+    text-align: center;
 }
