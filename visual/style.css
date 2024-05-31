@@ -1,3 +1,22 @@
+body {
+    background-image: url(reinaldoBackground.png);
+    background-size:cover;
+    overflow: hidden;
+}
+
+#TITULO {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 3vmax;
+}
+
+#SUBTITULO {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
 #kamke-clicker{
     border-radius: 20px;
     position: relative;
@@ -10,27 +29,60 @@
     height: 25vmax;
     background-repeat: no-repeat;
     cursor: pointer;
-    box-shadow: 8px 8px 0px 0px rgb(55, 68, 77);
+    box-shadow: 8px 8px 0px 0px rgb(145, 142, 18);
+    transition: 0.2s all;
 }
 
 #kamke-clicker:active {
     transform: translateY(5px);
-    box-shadow: 13px 13px 0px 0px rgb(21, 26, 29)
-}
-
-#TITULO {
-    text-align: center;
-}
-
-#SUBTITULO {
-    text-align: center;
+    box-shadow: 13px 13px 0px 0px rgb(77, 56, 0)
 }
 
 #mostrar-naldo-coins {
     display: flex;
     justify-content: center;
+    align-items: center;
+    img {
+        width: 100%;
+        max-width: 4%;
+    }
+}
+
+#naldocoins-texto {
+    color: white;
+    font-size: 20px;
+    margin-inline: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #naldo-coins {
-    margin-left: 5px;
+    color: white;
+    padding-top: 2px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+#menu {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    float: right;
+    margin: 0; padding: 0;
+	width: 100%;
+    max-width: 15%;
+    background-color: rgb(214, 213, 119);
+}
+
+#compraCursor {
+    display:flex;
+    align-items: center;
+    #cursorImagem {
+        width:100%;
+        max-width:5vmin;
+    }
+}
+
+#naldocoinPreview {
+    width:100%;
+    max-width:3vmin;
 }

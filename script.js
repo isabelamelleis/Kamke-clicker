@@ -1,10 +1,38 @@
 let NALDOCOIN = 0;
+
+
+// botão do reinaldo
 const botaoKamkeClicker = document.getElementById('kamke-clicker');
 
-botaoKamkeClicker.addEventListener('click', contarClicks);
 
+// "p" do html onde está a contagem dos naldocoins
+let naldoCoins = document.getElementById('naldo-coins');
+
+
+// contagem dos clicks para contabilizar mais naldocoins
+botaoKamkeClicker.addEventListener('click', contarClicks);
 function contarClicks() {
     NALDOCOIN++;
-    let naldoCoins = document.getElementById('naldo-coins');
     naldoCoins.innerText = NALDOCOIN;
 }
+
+// ---------------------------------------------------------------------------
+// cursor - primeira compra para CURSOR
+let precoCursor = document.getElementById('precoCursor');
+let precoCursorValor = 10;
+precoCursor.innerText = precoCursorValor;
+// ---------------------------------------------------------------------------
+
+
+const botaoComprarCursor = document.getElementById('compraCursor');
+botaoComprarCursor.addEventListener('click', function() {
+    if (NALDOCOIN < precoCursorValor) {
+        window.alert("TOMA NO TEU CU")
+    } else { // Mudar Preço
+        NALDOCOIN = NALDOCOIN - precoCursorValor;
+        naldoCoins.innerText = NALDOCOIN;
+        precoCursorValor =(precoCursorValor*2);
+        precoCursor.innerText = precoCursorValor;
+        console.log(precoCursorValor)
+    }
+});
