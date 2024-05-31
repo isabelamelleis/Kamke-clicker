@@ -1,16 +1,21 @@
-#div-botao-kamke-clicker {
-
-}
-
-#kamke-cliker{
-    position: absolute; 
-    left: 3%;
+#kamke-clicker{
+    border-radius: 20px;
+    position: relative;
+    left: 40%;
     border: none;
     background-image: url(../visual/reinaldo1.jpg);
     background-size: 100%;
     width: 100%;
     max-width: 20%;
     height: 25vmax;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px 0px rgb(55, 68, 77);
+}
+
+#kamke-clicker:active {
+    transform: translateY(5px);
+    box-shadow: 13px 13px 0px 0px rgb(21, 26, 29)
 }
 
 #TITULO {
@@ -19,4 +24,13 @@
 
 #SUBTITULO {
     text-align: center;
+}
+
+#mostrar-naldo-coins {
+    display: flex;
+    justify-content: center;
+}
+
+#naldo-coins {
+    margin-left: 5px;
 }
