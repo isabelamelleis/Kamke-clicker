@@ -23,16 +23,19 @@ let precoCursorValor = 10;
 precoCursor.innerText = precoCursorValor;
 // ---------------------------------------------------------------------------
 
-
 const botaoComprarCursor = document.getElementById('compraCursor');
 botaoComprarCursor.addEventListener('click', function() {
     if (NALDOCOIN < precoCursorValor) {
-        window.alert("TOMA NO TEU CU")
+        window.alert("TOMA NO TEU CU");
     } else { // Mudar Preço
         NALDOCOIN = NALDOCOIN - precoCursorValor;
         naldoCoins.innerText = NALDOCOIN;
         precoCursorValor =(precoCursorValor*2);
         precoCursor.innerText = precoCursorValor;
-        console.log(precoCursorValor)
+        let divCursorComprado = document.getElementById('displayNone');
+        divCursorComprado.style.display = 'flex';
+        divCursorComprado.classList.add('divCursorComprado');
     }
 });
+
+

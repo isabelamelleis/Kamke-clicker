@@ -4,6 +4,10 @@ body {
     overflow: hidden;
 }
 
+#displayNone {
+    display: none;
+}
+
 #TITULO {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
@@ -17,10 +21,14 @@ body {
     text-align: center;
 }
 
+#divBotaoKamkeClicker {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 #kamke-clicker{
     border-radius: 20px;
-    position: relative;
-    left: 40%;
     border: none;
     background-image: url(../visual/reinaldo1.jpg);
     background-size: 100%;
@@ -31,6 +39,20 @@ body {
     cursor: pointer;
     box-shadow: 8px 8px 0px 0px rgb(145, 142, 18);
     transition: 0.2s all;
+}
+
+.divCursorComprado {
+    display: flex;
+    align-items: center;
+    right: 30%;
+    position: absolute;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+#reinaldo_cursor {
+    height: 15vmin;
 }
 
 #kamke-clicker:active {
@@ -69,7 +91,7 @@ body {
     float: right;
     margin: 0; padding: 0;
 	width: 100%;
-    max-width: 15%;
+    max-width: 20%;
     background-color: rgb(214, 213, 119);
 }
 
@@ -78,7 +100,7 @@ body {
     align-items: center;
     #cursorImagem {
         width:100%;
-        max-width:5vmin;
+        max-width:8vmin;
     }
 }
 
