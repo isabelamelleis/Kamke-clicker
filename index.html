@@ -6,40 +6,42 @@
     <title>Kamke Clicker DEMO</title>
     <link rel="stylesheet" href="visual/style.css">
     <script defer src="script.js"></script>
-    <link rel="shortcut icon" href="visual/reinaldo_icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="visual/imagens/reinaldo_icon.jpg" type="image/x-icon">
 </head>
 <body>
-    <section id="mioloDoSite">
-        <h1 id="TITULO">BEM-VINDO AO KAMKE CLICKER!</h1>
-        <h3 id="SUBTITULO">Clique no Reinaldo para gerar Naldocoins</h3>
-        <div id="mostrar-naldo-coins">
-            <img src="visual/NALDOCOINS.gif" alt="NALDOCOINS">
+    <section id="miolo-site">
+        <h1 class="titulo-e-subtitulo">BEM-VINDO AO KAMKE CLICKER!</h1>
+        <h3 class="titulo-e-subtitulo">Clique no Reinaldo para gerar Naldocoins</h3>
+        <div id="div-mostrar-naldocoins">
+            <img src="visual/imagens/NALDOCOINS.gif" alt="NALDOCOINS">
             <p id="naldocoins-texto">
                 Naldocoins:
             </p>
-            <p id="naldo-coins">
+            <p id="NALDOCOINS">
                 0
             </p>
-            <img src="visual/NALDOCOINS.gif" alt="NALDOCOINS">
+            <img src="visual/imagens/NALDOCOINS.gif" alt="NALDOCOINS">
             <br>
         </div>
-        <div id="divBotaoKamkeClicker">
+        <div id="div-botao-kamke-clicker">
             <button id="kamke-clicker"></button>
-            <div id="displayNone">
-                <p id="stacksDeCursors">1x</p>
-                <img id="reinaldo_cursor" src="visual/reinaldo_cursor.png" alt=""> 
+            <div class="display-none" id="div-cursor-comprado">
+                <p id="stacks-cursors">1x</p>
+                <img id="reinaldo-cursor" src="visual/imagens/reinaldo_cursor.png" alt="Cursor do Reinaldo"> 
             </div>
         </div>
     </section>
-    <div id="menu">
-        <ul>
-            <div id="Cursor">
-                <li><button id="compraCursor"><img id="cursorImagem" src="visual/imagemCursor.png" alt="">Cursor | <img id="naldocoinPreview" src="visual/NALDOCOINS.png" alt=""> <p id="precoCursor">10</p></button> </li> 
-            </div>
-           <!-- <li><button><img class="imagemPreviewLoja" src="visual/imagemCursor.png" alt="">Comprar | R$ <p>10</p></button></li>
-            <li><button><img class="imagemPreviewLoja" src="visual/imagemCursor.png" alt="">Comprar | R$ <p>10</p></button></li>
-            -->
-        </ul>
-    </div>     
+    <div id="loja"> <!-- LOJA -->
+        <img src="visual/imagens/loja.png" alt="Logo da loja">
+        <div>
+            <button id="compra-cursor"><img id="cursor-imagem" src="visual/imagens/imagemCursor.png" alt="Cursor do Reinaldo">Cursor | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-cursor">10</p></button>
+        </div>
+        <div id="badzin-nao-desbloqueado">
+            <button class="botao-gustavo"><img id="gustavo-imagem" src="visual/imagens/badzinTranparente.png" alt="???">who the fuck is this bro?</button>
+        </div>
+        <div id="badzin-desbloqueado" class="display-none"> <!--Badzin desbloqueado-->
+            <button class="botao-gustavo" id="compra-gustavo"><img id="gustavo-imagem" src="visual/imagens/badzin.png" alt="Gustavo Venturi vulgo Badzin">Badzin | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-gustavo">100</p></button>
+        </div>
+    </div>
 </body>
 </html>

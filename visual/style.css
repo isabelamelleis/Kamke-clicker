@@ -1,66 +1,24 @@
 body {
-    background-image: url(reinaldoBackground.png);
+    background-image: url(imagens/reinaldoBackground.png);
     background-size:cover;
     overflow: hidden;
 }
 
-#displayNone {
+.display-none {
     display: none;
 }
 
-#TITULO {
+.titulo-e-subtitulo {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     text-align: center;
+}
+
+h1 {
     font-size: 3vmax;
 }
 
-#SUBTITULO {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    text-align: center;
-}
-
-#divBotaoKamkeClicker {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-#kamke-clicker{
-    border-radius: 20px;
-    border: none;
-    background-image: url(../visual/reinaldo1.jpg);
-    background-size: 100%;
-    width: 100%;
-    max-width: 20%;
-    height: 25vmax;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    box-shadow: 8px 8px 0px 0px rgb(145, 142, 18);
-    transition: 0.2s all;
-}
-
-.divCursorComprado {
-    display: flex;
-    align-items: center;
-    right: 30%;
-    position: absolute;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-}
-
-#reinaldo_cursor {
-    height: 15vmin;
-}
-
-#kamke-clicker:active {
-    transform: translateY(5px);
-    box-shadow: 13px 13px 0px 0px rgb(77, 56, 0)
-}
-
-#mostrar-naldo-coins {
+#div-mostrar-naldocoins {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,34 +35,87 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#naldo-coins {
+#NALDOCOINS {
     color: white;
     padding-top: 2px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
 }
 
-#menu {
+#div-botao-kamke-clicker {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#kamke-clicker{
+    border-radius: 20px;
+    border: none;
+    background-image: url(../visual/imagens/reinaldo1.jpg);
+    background-size: 100%;
+    width: 100%;
+    max-width: 20%;
+    height: 25vmax;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px 0px rgb(145, 142, 18);
+    transition: 0.2s all;
+}
+
+.div-cursor-comprado {
+    display: flex;
+    align-items: center;
+    right: 30%;
+    position: absolute;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+#reinaldo-cursor {
+    height: 15vmin;
+}
+
+#kamke-clicker:active {
+    transform: translateY(5px);
+    box-shadow: 13px 13px 0px 0px rgb(77, 56, 0)
+}
+
+#loja {
     position: absolute;
     top: 20%;
     right: 0;
     float: right;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 2vmin;
 	width: 100%;
     max-width: 20%;
     background-color: rgb(214, 213, 119);
 }
 
-#compraCursor {
+#compra-cursor {
     display:flex;
     align-items: center;
-    #cursorImagem {
+    width: 100%;
+    max-width: 55%;
+    #cursor-imagem {
         width:100%;
-        max-width:8vmin;
+        max-width:10vmin;
     }
 }
 
-#naldocoinPreview {
+.naldocoin-preview {
     width:100%;
     max-width:3vmin;
+}
+
+.botao-gustavo {
+    display:flex;
+    align-items: center;
+    width: 100%;
+    max-width: 55%;
+    #gustavo-imagem {
+        width:100%;
+        max-width:9vmin;
+    }
 }
