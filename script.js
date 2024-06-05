@@ -30,7 +30,7 @@ const botaoComprarCursor = document.getElementById('compra-cursor');
 let quantCursor = 0;
 botaoComprarCursor.addEventListener('click', function() {
     if (NALDOCOIN < precoCursorValor) {
-        window.alert("TOMA NO TEU CU");
+        window.alert('TOMA NO TEU CU');
     } else {
 
         // altera a contagem dos NALDOCOINS depois da compra
@@ -66,6 +66,7 @@ let precoGustavo = document.getElementById('preco-gustavo');
 let precoGustavoValor = 100;
 precoGustavo.innerHTML = precoGustavoValor;
 
+// faz o gustavo borrado desaparecer e aparecer o comprável
 function desbloquearGustavo() {
     let badzinNaoDesbloqueado = document.getElementById('badzin-nao-desbloqueado');
     badzinNaoDesbloqueado.style.display = 'none';
@@ -74,10 +75,18 @@ function desbloquearGustavo() {
     gustavoDesbloqueado.style.display = 'flex';
 }
 
+// faz uma mensagem de erro aparecer caso o botão do gustavo bloqueado seja clicado
+const botaoBadzinBloqueado = document.getElementById('compra-gustavo-bloqueado');
+botaoBadzinBloqueado.addEventListener('click', function () {
+    if (NALDOCOIN < 100) {
+       window.alert('salamaleicoيساعد');
+    }
+});
+
 const botaoBadzin = document.getElementById('compra-gustavo');
 botaoBadzin.addEventListener('click', function() {
     if (NALDOCOIN < precoGustavoValor) {
-        window.alert("TOMA NO TEU CU");
+        window.alert('TOMA NO TEU CU');
     } else {
 
         // altera a contagem dos NALDOCOINS depois da compra
