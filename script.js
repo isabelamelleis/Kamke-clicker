@@ -36,6 +36,7 @@ botaoComprarCursor.addEventListener('mouseover', () => {
     mensagemCursorID.style.display = 'block';
     }, 500);
 });
+
 // quando o mouse sai de cima do botão, ele volta a ficar desaparecido
 botaoComprarCursor.addEventListener('mouseout', () => {
     clearTimeout(timeoutCursor);
@@ -67,15 +68,44 @@ botaoComprarCursor.addEventListener('click', function() {
         }
         setInterval(autoClick, 1500);
         
-        //aumenta a quantidade de cursores possuídos a cada compra
+        // aumenta a quantidade de cursores possuídos a cada compra
         quantCursor++;
 
-        //aumenta e mostra o numero de cursores comprados
+        // aumenta e mostra o numero de cursores comprados
         const stacksDeCursors = document.getElementById('stacks-cursors');
         stacksDeCursors.innerText = `${quantCursor}x`;
 }});
 
 // ------------------------------ GUSTAVO VENTURI ----------------------------------
+const botaoBadzinBloqueado = document.getElementById('compra-gustavo-bloqueado');
+const botaoBadzin = document.getElementById('compra-gustavo');
+
+// Mensagem do botão badzin bloqueado
+const mensagemBadzinBloqueado = document.getElementById('mensagem-badzin-bloqueado-id');
+botaoBadzinBloqueado.addEventListener('mouseover', () => {
+    timeoutBadzin = setTimeout(() => {
+        mensagemBadzinBloqueado.style.display = 'block';
+    },500)
+});
+
+botaoBadzinBloqueado.addEventListener('mouseout', () => {
+    clearTimeout(timeoutBadzin);
+    mensagemBadzinBloqueado.style.display = 'none';
+})
+
+// Mensagem do botão badzin desbloqueado
+const mensagemBadzin = document.getElementById('mensagem-badzin-id');
+botaoBadzin.addEventListener('mouseover', () => {
+    timeoutBadzin = setTimeout(() => { 
+            mensagemBadzin.style.display = 'block';
+        }, 500);
+})
+
+botaoBadzin.addEventListener('mouseout', () => {
+    clearTimeout(timeoutBadzin);
+    mensagemBadzin.style.display = 'none';
+});
+
 // faz o gustavo borrado desaparecer e aparecer o comprável
 function desbloquearGustavo() {
     let badzinNaoDesbloqueado = document.getElementById('badzin-nao-desbloqueado');
@@ -85,34 +115,17 @@ function desbloquearGustavo() {
     gustavoDesbloqueado.style.display = 'flex';
 }
 
-
 // faz uma mensagem de erro aparecer caso o botão do gustavo bloqueado seja clicado
-const botaoBadzinBloqueado = document.getElementById('compra-gustavo-bloqueado');
 botaoBadzinBloqueado.addEventListener('click', function () {
     if (NALDOCOIN < 100) {
        window.alert('salamaleicoيساعد');
     }
 });
 
-const mensagemBadzinBloqueado = document.getElementById('mensagem-badzin-bloqueado-id');
-botaoBadzinBloqueado.addEventListener('mouseover', () => {
-    timeoutBadzin = setTimeout(() => {
-        mensagemBadzinBloqueado.style.display = 'block';
-    }, 500)
-}); 
-botaoBadzinBloqueado.addEventListener('mouseout', () => {
-    clearTimeout(timeoutBadzin);
-    mensagemBadzinBloqueado.style.display = 'none';
-});
-
-
 // primeira compra para BADZIN
 let precoGustavo = document.getElementById('preco-gustavo');
 let precoGustavoValor = 100;
 precoGustavo.innerHTML = precoGustavoValor;
-
-const botaoBadzin = document.getElementById('compra-gustavo');
-
 
 quantGustavo = 0;
 botaoBadzin.addEventListener('click', function() {
@@ -137,8 +150,11 @@ botaoBadzin.addEventListener('click', function() {
         // define a quantidade de badzins e mostra na tela
         quantGustavo++;
 
-        //aumenta e mostra o numero de badzins comprados
+        //aumenta e mostra o número de badzins comprados
         const stacksBadzins = document.getElementById('stacks-badzins');
         stacksBadzins.innerText = `${quantGustavo}x`;
     }
 })
+
+// --------------------------------- RUAN ---------------------------------
+const botaoRuanBloqueado = document.getElementById('botao-ruan-bloqueado');
