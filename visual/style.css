@@ -70,10 +70,23 @@ h1 {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
+    img {
+        height: 15vmin;
+    }
 }
 
-#reinaldo-cursor {
-    height: 15vmin;
+.div-badzin-comprado {
+    display: flex;
+    align-items: center;
+    right: 30%;
+    bottom: 40%;
+    position: absolute;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large; 
+    img {
+        height: 15vmin;
+    }
 }
 
 #kamke-clicker:active {
@@ -104,6 +117,7 @@ h1 {
     }
 }
 
+
 .naldocoin-preview {
     width:100%;
     max-width:3vmin;
@@ -114,8 +128,41 @@ h1 {
     align-items: center;
     width: 100%;
     max-width: 55%;
-    #gustavo-imagem {
+    .imagem-gustavo-botao {
         width:100%;
-        max-width:9vmin;
+        max-width: 9vmin;
     }
+}
+
+#mensagem-cursor-id {
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1%;
+    position: absolute;
+    bottom: 45%; 
+    left: 55%; 
+    width: 100%;
+    max-width:40%;
+}
+
+#mensagem-badzin-bloqueado-id {
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1%;
+    position: absolute;
+    bottom: 65%; 
+    left: 55%; 
+    width: 100%;
+    max-width:40%;
+}
+
+#loja-logo {
+    margin-left: 30%;
+    margin-right: 30%;
 }

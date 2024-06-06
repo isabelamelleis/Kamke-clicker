@@ -25,23 +25,41 @@
         </div>
         <div id="div-botao-kamke-clicker">
             <button id="kamke-clicker"></button>
-            <div class="display-none" id="div-cursor-comprado">
-                <p id="stacks-cursors">1x</p>
-                <img id="reinaldo-cursor" src="visual/imagens/reinaldo_cursor.png" alt="Cursor do Reinaldo"> 
+            <div id="div-itens-comprados-ao-lado-botao-kamke">
+                <div class="display-none" id="cursor-reinaldo-comprado">
+                    <p id="stacks-cursors">1x</p>
+                    <img src="visual/imagens/reinaldo_cursor.png" alt="Cursor do Reinaldo">
+                </div>
+                <div class="display-none" id="badzin-comprado">
+                    <p id="stacks-badzins">1x</p>
+                    <img id="badzin-cursor" src="visual/imagens/badzin_cursor.png" alt="Badzin do Reinaldo">
+                </div>
             </div>
         </div>
     </section>
     <div id="loja"> <!-- LOJA -->
-        <img id="imagem-logo-loja" src="visual/imagens/loja.png" alt="Logo da loja">
+        <div id="loja-logo"><img id="imagem-logo-loja" src="visual/imagens/loja.png" alt="Logo da loja"></div>
+        <!--CURSOR-->
         <div>
-            <button id="compra-cursor"><img id="cursor-imagem" src="visual/imagens/imagemCursor.png" alt="Cursor do Reinaldo">Cursor | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-cursor">10</p></button>
+            <button id="compra-cursor">
+                <img id="cursor-imagem" src="visual/imagens/imagemCursor.png" alt="Cursor do Reinaldo">Cursor | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-cursor">10</p>
+            </button>
+            <div id="mensagem-cursor-id">Clica para você a cada um segundo</div>
         </div>
+        <!--BADZIN-->
         <div id="badzin-nao-desbloqueado">
-            <button class="botao-gustavo" id="compra-gustavo-bloqueado"><img id="gustavo-imagem" src="visual/imagens/badzinTranparente.png" alt="???">who the fuck is this bro?</button>
+            <button class="botao-gustavo" id="compra-gustavo-bloqueado">
+                <img class="imagem-gustavo-botao" src="visual/imagens/badzinTranparente.png" alt="???">who the fuck is this bro?
+            </button>
         </div>
         <div id="badzin-desbloqueado" class="display-none"> <!--Badzin desbloqueado-->
-            <button class="botao-gustavo" id="compra-gustavo"><img id="gustavo-imagem" src="visual/imagens/badzin.png" alt="Gustavo Venturi vulgo Badzin">Badzin | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-gustavo">100</p></button>
+            <button class="botao-gustavo" id="compra-gustavo">
+                <img class="imagem-gustavo-botao" src="visual/imagens/badzin.png" alt="Gustavo Venturi vulgo Badzin">Badzin | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-gustavo">100</p>
+            </button>
+            <div id="mensagem-badzin-bloqueado-id">Aumente suas vadias</div>
+            <div id="mensagem-badzin-id">Aumenta seus cliques no botão</div>
         </div>
+        <!--RUAN-->
     </div>
 </body>
 </html>
