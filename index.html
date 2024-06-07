@@ -25,6 +25,7 @@
         </div>
         <div id="div-botao-kamke-clicker">
             <button id="kamke-clicker"></button>
+            <!--ITENS COMPRADOS AO LADO DO BOTAO PRINCIPAL -->
             <div id="div-itens-comprados-ao-lado-botao-kamke">
                 <div class="display-none" id="cursor-reinaldo-comprado">
                     <p id="stacks-cursors">1x</p>
@@ -33,6 +34,10 @@
                 <div class="display-none" id="badzin-comprado">
                     <p id="stacks-badzins">1x</p>
                     <img id="badzin-cursor" src="visual/imagens/badzin_cursor.png" alt="Badzin do Reinaldo">
+                </div>
+                <div class="display-none" id="ruan-comprado">
+                    <p id="stacks-ruans">1x</p>
+                    <img src="visual/imagens/Goober_hammer.png" alt="">
                 </div>
             </div>
         </div>
@@ -47,7 +52,7 @@
             <div id="mensagem-cursor-id">Clica para você a cada um segundo</div>
         </div>
         <!--BADZIN-->
-        <div id="badzin-nao-desbloqueado">
+        <div id="badzin-nao-desbloqueado">  <!--BADZIN NÃO DESBLOQUEADO-->
             <button class="botao-gustavo" id="compra-gustavo-bloqueado">
                 <img class="imagem-gustavo-botao" src="visual/imagens/badzinTranparente.png" alt="???">who the fuck is this bro?
             </button>
@@ -60,15 +65,17 @@
             <div id="mensagem-badzin-id">Aumenta suas vadias (seus cliques no botão)</div>
         </div>
         <!--RUAN-->
-        <div id="ruan-bloqueado">
+        <div id="ruan-bloqueado">  <!--RUAN BLOQUEADO-->
             <button class="botao-ruan" id="botao-ruan-bloqueado">
                 <img class="imagem-ruan-botao" src="visual/imagens/ruanBloqueado.png" alt="???">justin bieber?
             </button>
+            <div id="mensagem-ruan-bloqueado">Aumente suas vadias primeiro</div>
         </div>
-        <div id="ruan-desbloqueado">
-            <button class="botao-ruan">
-                <img class="imagem-ruan-botao" src="visual/imagens/ruan.png" alt="OMGGG RUAN">Ruan |<img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS">300
+        <div id="ruan-desbloqueado" class="display-none">  <!--RUAN DESBLOQUEADO-->
+            <button class="botao-ruan" id="compra-ruan">
+                <img class="imagem-ruan-botao" src="visual/imagens/ruan.png" alt="OMGGG RUAN">Goober |<img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"><p id="preco-ruan">300</p>
             </button>
+            <div id="mensagem-ruan-desbloqueado">Gera NALDOCOINS (Its the Goober)</div>
         </div>
     </div>
 </body>

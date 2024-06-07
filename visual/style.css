@@ -89,6 +89,20 @@ h1 {
     }
 }
 
+.div-ruan-comprado {
+    display: flex;
+    align-items: center;
+    right: 30%;
+    bottom: 10%;
+    position: absolute;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large; 
+    img {
+        height: 15vmin;
+    }
+}
+
 #kamke-clicker:active {
     transform: translateY(5px);
     box-shadow: 13px 13px 0px 0px rgb(77, 56, 0)
@@ -156,7 +170,7 @@ h1 {
     border-radius: 5px;
     padding: 1%;
     position: absolute;
-    bottom: 65%; 
+    bottom: 55%; 
     left: 55%; 
     width: 100%;
     max-width:40%;
@@ -170,7 +184,7 @@ h1 {
     border-radius: 5px;
     padding: 1%;
     position: absolute;
-    bottom: 50%; 
+    bottom: 40%; 
     left: 55%; 
     width: 100%;
     max-width:40%;
@@ -185,7 +199,35 @@ h1 {
     border-radius: 5px;
     padding: 1%;
     position: absolute;
-    bottom: 50%; 
+    bottom: 40%; 
+    left: 55%; 
+    width: 100%;
+    max-width:40%;
+}
+
+#mensagem-ruan-bloqueado{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1%;
+    position: absolute;
+    bottom: 10%; 
+    left: 55%; 
+    width: 100%;
+    max-width:40%;
+}
+
+#mensagem-ruan-desbloqueado{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1%;
+    position: absolute;
+    bottom: 10%; 
     left: 55%; 
     width: 100%;
     max-width:40%;

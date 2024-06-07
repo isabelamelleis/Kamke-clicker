@@ -16,6 +16,8 @@ botaoKamkeClicker.addEventListener('click', () => {
     naldoCoins.innerText = NALDOCOIN;
     if (NALDOCOIN >= 100) {
         desbloquearGustavo();
+    } else if (NALDOCOIN >= 10) {
+        desbloquearRuan();
     }
 });
 
@@ -87,7 +89,6 @@ botaoBadzinBloqueado.addEventListener('mouseover', () => {
         mensagemBadzinBloqueado.style.display = 'block';
     },500)
 });
-
 botaoBadzinBloqueado.addEventListener('mouseout', () => {
     clearTimeout(timeoutBadzin);
     mensagemBadzinBloqueado.style.display = 'none';
@@ -100,7 +101,6 @@ botaoBadzin.addEventListener('mouseover', () => {
             mensagemBadzin.style.display = 'block';
         }, 500);
 })
-
 botaoBadzin.addEventListener('mouseout', () => {
     clearTimeout(timeoutBadzin);
     mensagemBadzin.style.display = 'none';
@@ -139,10 +139,10 @@ botaoBadzin.addEventListener('click', function() {
         naldoCoins.innerText = NALDOCOIN;
 
         // aumenta o valor do badzin para uma próxima compra
-        precoGustavoValor = precoGustavoValor + (precoGustavoValor * 3);
+        precoGustavoValor = precoGustavoValor + (precoGustavoValor * 2);
         precoGustavo.innerText = precoGustavoValor;
 
-        // faz aparecer a div com o cursor do badzin após a primeira compra
+        // faz aparecer a div com o cursor do badzin na tela após a primeira compra
         let divBadzinComprado = document.getElementById('badzin-comprado');
         divBadzinComprado.style.display = 'flex';
         divBadzinComprado.classList.add('div-badzin-comprado');
@@ -157,4 +157,88 @@ botaoBadzin.addEventListener('click', function() {
 })
 
 // --------------------------------- RUAN ---------------------------------
+// Criando os botões do ruan bloqueado e desbloqueado
 const botaoRuanBloqueado = document.getElementById('botao-ruan-bloqueado');
+const botaoRuan = document.getElementById('compra-ruan');
+
+//Definindo as variáveis de valor e quantidade de ruans comprados
+let precoRuan = document.getElementById('preco-ruan');
+let precoRuanValor = 10;
+precoRuan.innerText = precoRuanValor;
+quantRuan = 0;
+
+// mensagens ruan bloqueado
+const mensagemRuanBloqueado = document.getElementById('mensagem-ruan-bloqueado')
+botaoRuanBloqueado.addEventListener('mouseover',() => {
+    timerRuan = setTimeout(() => {
+        mensagemRuanBloqueado.style.display = 'block';
+    }, 500);
+});
+botaoRuanBloqueado.addEventListener('mouseout',() => {
+    clearTimeout(timerRuan);
+    mensagemRuanBloqueado.style.display = 'none';
+});
+
+// mensagens ruan desbloqueado
+const mensagemRuanDesbloqueado = document.getElementById('mensagem-ruan-desbloqueado')
+botaoRuan.addEventListener('mouseover', () => {
+    timerRuan = setTimeout(() => {
+        mensagemRuanDesbloqueado.style.display = 'block';
+    },500)
+})
+botaoRuan.addEventListener('mouseout', () => {
+    clearTimeout(timerRuan);
+    mensagemRuanDesbloqueado.style.display = 'none'
+});
+
+// DESBLOQUEAR RUAN
+function desbloquearRuan() {
+    let ruanBloqueado = document.getElementById('ruan-bloqueado');
+    ruanBloqueado.style.display = 'none';
+    let ruanDesbloqueado = document.getElementById('ruan-desbloqueado')
+    ruanDesbloqueado.style.display = 'flex';
+}
+
+// Mensagem de erro pro ruan bloqueado
+botaoRuanBloqueado.addEventListener('click', () => {
+    if (NALDOCOIN < 10)
+        window.alert('TIRA SORAA 😭😭😭 ')
+})
+
+// Mensagem de erro pro ruan desbloqueado
+botaoRuan.addEventListener('click', () => {
+    if (NALDOCOIN < precoRuanValor) {
+    window.alert('TOMA NO TEU CU')
+    }
+    else {
+    NALDOCOIN = NALDOCOIN - precoRuanValor;
+    naldoCoins.innerText = NALDOCOIN;
+
+    precoRuanValor = Math.trunc(precoRuanValor+(precoRuanValor*0.6));
+    precoRuan.innerText = precoRuanValor;
+
+    // faz aparecer a div com o ruan na tela após a primeira compra
+    let divRuanComprado = document.getElementById('ruan-comprado');
+    divRuanComprado.style.display = 'flex';
+    divRuanComprado.classList.add('div-ruan-comprado');
+
+    quantRuan ++;
+    console.log(quantRuan);
+
+    const stacksRuans = document.getElementById('stacks-ruans')
+    stacksRuans.innerText =`${quantRuan}x`;
+
+    function autoClick () {
+        botaoKamkeClicker.click()
+    }
+    setInterval(autoClick, 1000)
+
+    if (quantRuan >= 5)
+        setInterval(autoClick, 600)
+    // Futuramente adicionar o the midnight goober here
+    if (quantRuan >= 10)
+        setInterval(autoClick, 200)
+}
+})
+
+
