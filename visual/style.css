@@ -120,6 +120,21 @@ h1 {
     background-color: rgb(214, 213, 119);
 }
 
+#loja-logo {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.naldocoin-preview {
+    width:100%;
+    max-width:3vmin;
+}
+
+.display-flex-mensagens-e-botoes {
+    display: flex;
+    align-items: center;
+}
+
 #compra-cursor {
     display:flex;
     align-items: center;
@@ -130,12 +145,6 @@ h1 {
         width:100%;
         max-width:10vmin;
     }
-}
-
-
-.naldocoin-preview {
-    width:100%;
-    max-width:3vmin;
 }
 
 .botao-gustavo {
@@ -162,78 +171,26 @@ h1 {
     }
 }
 
-#mensagem-cursor-id {
+.mensagem-explicacao-botoes-desbloqueados {
     display: none;
     background-color: black;
     color: #fff;
+    height: fit-content;
     text-align: center;
     border-radius: 5px;
     padding: 1%;
-    position: absolute;
-    bottom: 55%; 
-    left: 55%; 
     width: 100%;
     max-width:40%;
 }
 
-#mensagem-badzin-id {
+.mensagem-explicacao-botoes-bloqueados {
     display: none;
     background-color: black;
-    color: #fff;
+    color: #ff0000;
+    height: fit-content;
     text-align: center;
     border-radius: 5px;
     padding: 1%;
-    position: absolute;
-    bottom: 40%; 
-    left: 55%; 
     width: 100%;
     max-width:40%;
-}
-
-
-#mensagem-badzin-bloqueado-id {
-    display: none;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 1%;
-    position: absolute;
-    bottom: 40%; 
-    left: 55%; 
-    width: 100%;
-    max-width:40%;
-}
-
-#mensagem-ruan-bloqueado{
-    display: none;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 1%;
-    position: absolute;
-    bottom: 10%; 
-    left: 55%; 
-    width: 100%;
-    max-width:40%;
-}
-
-#mensagem-ruan-desbloqueado{
-    display: none;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 1%;
-    position: absolute;
-    bottom: 10%; 
-    left: 55%; 
-    width: 100%;
-    max-width:40%;
-}
-
-#loja-logo {
-    margin-left: 30%;
-    margin-right: 30%;
 }

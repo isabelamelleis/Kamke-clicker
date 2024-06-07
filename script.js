@@ -16,7 +16,9 @@ botaoKamkeClicker.addEventListener('click', () => {
     naldoCoins.innerText = NALDOCOIN;
     if (NALDOCOIN >= 100) {
         desbloquearGustavo();
-    } else if (NALDOCOIN >= 10) {
+    } 
+    
+    if (NALDOCOIN >= 300) {
         desbloquearRuan();
     }
 });
@@ -56,7 +58,7 @@ botaoComprarCursor.addEventListener('click', function() {
         naldoCoins.innerText = NALDOCOIN;
 
         // aumenta o valor do cursor para uma próxima compra
-        precoCursorValor = Math.trunc(precoCursorValor + (precoCursorValor * 0.4)); // Math.trunc tira todas as casas depois da vírgula
+        precoCursorValor = Math.trunc(precoCursorValor + (precoCursorValor * 0.6)); // Math.trunc tira todas as casas depois da vírgula
         precoCursor.innerText = precoCursorValor;
 
         // faz aparecer a div com a imagem do cursor após a primeira compra
@@ -69,6 +71,8 @@ botaoComprarCursor.addEventListener('click', function() {
             botaoKamkeClicker.click();
         }
         setInterval(autoClick, 1500);
+        if (quantCursor >= 10);
+            setInterval(autoClick, 1000);
         
         // aumenta a quantidade de cursores possuídos a cada compra
         quantCursor++;
@@ -113,11 +117,12 @@ function desbloquearGustavo() {
 
     let gustavoDesbloqueado = document.getElementById('badzin-desbloqueado');
     gustavoDesbloqueado.style.display = 'flex';
+    gustavoDesbloqueado.classList.add('display-flex-mensagens-e-botoes')
 }
 
 // faz uma mensagem de erro aparecer caso o botão do gustavo bloqueado seja clicado
 botaoBadzinBloqueado.addEventListener('click', function () {
-    if (NALDOCOIN < 100) {
+    if (NALDOCOIN < precoGustavoValor) {
        window.alert('salamaleicoيساعد');
     }
 });
@@ -139,7 +144,7 @@ botaoBadzin.addEventListener('click', function() {
         naldoCoins.innerText = NALDOCOIN;
 
         // aumenta o valor do badzin para uma próxima compra
-        precoGustavoValor = precoGustavoValor + (precoGustavoValor * 2);
+        precoGustavoValor = precoGustavoValor + Math.trunc((precoGustavoValor * 1.7));
         precoGustavo.innerText = precoGustavoValor;
 
         // faz aparecer a div com o cursor do badzin na tela após a primeira compra
@@ -161,13 +166,13 @@ botaoBadzin.addEventListener('click', function() {
 const botaoRuanBloqueado = document.getElementById('botao-ruan-bloqueado');
 const botaoRuan = document.getElementById('compra-ruan');
 
-//Definindo as variáveis de valor e quantidade de ruans comprados
+// Definindo as variáveis de valor e quantidade de ruans comprados
 let precoRuan = document.getElementById('preco-ruan');
-let precoRuanValor = 10;
+let precoRuanValor = 300;
 precoRuan.innerText = precoRuanValor;
 quantRuan = 0;
 
-// mensagens ruan bloqueado
+// Mensagens ruan bloqueado
 const mensagemRuanBloqueado = document.getElementById('mensagem-ruan-bloqueado')
 botaoRuanBloqueado.addEventListener('mouseover',() => {
     timerRuan = setTimeout(() => {
@@ -179,7 +184,7 @@ botaoRuanBloqueado.addEventListener('mouseout',() => {
     mensagemRuanBloqueado.style.display = 'none';
 });
 
-// mensagens ruan desbloqueado
+// Mensagens ruan desbloqueado
 const mensagemRuanDesbloqueado = document.getElementById('mensagem-ruan-desbloqueado')
 botaoRuan.addEventListener('mouseover', () => {
     timerRuan = setTimeout(() => {
@@ -195,26 +200,32 @@ botaoRuan.addEventListener('mouseout', () => {
 function desbloquearRuan() {
     let ruanBloqueado = document.getElementById('ruan-bloqueado');
     ruanBloqueado.style.display = 'none';
+
     let ruanDesbloqueado = document.getElementById('ruan-desbloqueado')
     ruanDesbloqueado.style.display = 'flex';
+    ruanDesbloqueado.classList.add('display-flex-mensagens-e-botoes')
 }
 
 // Mensagem de erro pro ruan bloqueado
 botaoRuanBloqueado.addEventListener('click', () => {
-    if (NALDOCOIN < 10)
+    if (NALDOCOIN < precoRuanValor)
         window.alert('TIRA SORAA 😭😭😭 ')
 })
 
-// Mensagem de erro pro ruan desbloqueado
+// COMPRA DO RUAN
 botaoRuan.addEventListener('click', () => {
+    
     if (NALDOCOIN < precoRuanValor) {
     window.alert('TOMA NO TEU CU')
     }
     else {
+
+    // altera a contagem dos NALDOCOINS depois da compra
     NALDOCOIN = NALDOCOIN - precoRuanValor;
     naldoCoins.innerText = NALDOCOIN;
 
-    precoRuanValor = Math.trunc(precoRuanValor+(precoRuanValor*0.6));
+    // aumenta o valor do goober para uma próxima compra
+    precoRuanValor = Math.trunc(precoRuanValor+(precoRuanValor * 2));
     precoRuan.innerText = precoRuanValor;
 
     // faz aparecer a div com o ruan na tela após a primeira compra
@@ -222,16 +233,18 @@ botaoRuan.addEventListener('click', () => {
     divRuanComprado.style.display = 'flex';
     divRuanComprado.classList.add('div-ruan-comprado');
 
+    // aumenta a quantidade de ruans possuídos a cada compra
     quantRuan ++;
-    console.log(quantRuan);
 
+    // mostra na tela número de ruans comprados
     const stacksRuans = document.getElementById('stacks-ruans')
     stacksRuans.innerText =`${quantRuan}x`;
 
+    // funcionalidade do ruan, o que ele faz
     function autoClick () {
         botaoKamkeClicker.click()
     }
-    setInterval(autoClick, 1000)
+    setInterval(autoClick, 800)
 
     if (quantRuan >= 5)
         setInterval(autoClick, 600)
