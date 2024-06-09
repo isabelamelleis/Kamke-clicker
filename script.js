@@ -9,7 +9,6 @@ const botaoKamkeClicker = document.getElementById('kamke-clicker');
 // "p" do html onde está a contagem dos naldocoins
 let naldoCoins = document.getElementById('NALDOCOINS');
 
-
 // contagem dos clicks para contabilizar mais naldocoins
 botaoKamkeClicker.addEventListener('click', () => {
     NALDOCOIN = NALDOCOIN + 1 + quantGustavo;
@@ -23,6 +22,32 @@ botaoKamkeClicker.addEventListener('click', () => {
     }
 });
 
+// ------------------------------ EFEITOS SONÓROS ----------------------------
+
+// Audio Cursor
+const audioBotaoBomDia = new Audio();
+audioBotaoBomDia.src='../visual/audios/bom_dia.mp3'
+
+function botaoSomBomDia() {
+    audioBotaoBomDia.currentTime = 0;
+    audioBotaoBomDia.play();
+}
+//Audio Badzin
+const audioBotao2 = new Audio();
+audioBotao2.src='../visual/audios/badzin_audio.mp3'
+
+function BadzinAudio() {
+    audioBotao2.currentTime = 0;
+    audioBotao2.play();
+}
+//Audio Ruan
+const audioBotao3 = new Audio();
+audioBotao3.src='../visual/audios/ruan_audio.mp3'
+
+function RuanAudio() {
+    audioBotao3.currentTime = 0;
+    audioBotao3.play();
+}
 
 // ------------------------------ CURSOR -------------------------------------
 // primeira compra para CURSOR
@@ -60,6 +85,8 @@ botaoComprarCursor.addEventListener('click', function() {
         // aumenta o valor do cursor para uma próxima compra
         precoCursorValor = Math.trunc(precoCursorValor + (precoCursorValor * 0.6)); // Math.trunc tira todas as casas depois da vírgula
         precoCursor.innerText = precoCursorValor;
+
+        botaoSomBomDia();
 
         // faz aparecer a div com a imagem do cursor após a primeira compra
         let divCursorComprado = document.getElementById('cursor-reinaldo-comprado');
@@ -139,6 +166,8 @@ botaoBadzin.addEventListener('click', function() {
         window.alert('TOMA NO TEU CU');
     } else {
 
+        BadzinAudio();
+
         // altera a contagem dos NALDOCOINS depois da compra
         NALDOCOIN = NALDOCOIN - precoGustavoValor;
         naldoCoins.innerText = NALDOCOIN;
@@ -146,6 +175,7 @@ botaoBadzin.addEventListener('click', function() {
         // aumenta o valor do badzin para uma próxima compra
         precoGustavoValor = precoGustavoValor + Math.trunc((precoGustavoValor * 1.7));
         precoGustavo.innerText = precoGustavoValor;
+
 
         // faz aparecer a div com o cursor do badzin na tela após a primeira compra
         let divBadzinComprado = document.getElementById('badzin-comprado');
@@ -220,6 +250,8 @@ botaoRuan.addEventListener('click', () => {
     }
     else {
 
+    RuanAudio();
+
     // altera a contagem dos NALDOCOINS depois da compra
     NALDOCOIN = NALDOCOIN - precoRuanValor;
     naldoCoins.innerText = NALDOCOIN;
@@ -247,7 +279,7 @@ botaoRuan.addEventListener('click', () => {
     setInterval(autoClick, 800)
 
     if (quantRuan >= 5)
-        setInterval(autoClick, 600)
+        setInterval(autoClick, 500)
     // Futuramente adicionar o the midnight goober here
     if (quantRuan >= 10)
         setInterval(autoClick, 200)
