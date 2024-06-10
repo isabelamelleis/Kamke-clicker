@@ -95,7 +95,8 @@ botaoComprarCursor.addEventListener('click', function() {
 
         // faz o cursor (que acabou de ser comprado) começar a fazer os autoclicks
         function autoClick() {
-            botaoKamkeClicker.click();
+            NALDOCOIN++;
+            naldoCoins.innerText = NALDOCOIN;
         }
         setInterval(autoClick, 1500);
         if (quantCursor >= 10);
@@ -274,7 +275,8 @@ botaoRuan.addEventListener('click', () => {
 
     // funcionalidade do ruan, o que ele faz
     function autoClick () {
-        botaoKamkeClicker.click()
+        NALDOCOIN++;
+        naldoCoins.innerText = NALDOCOIN;
     }
     setInterval(autoClick, 800)
 
