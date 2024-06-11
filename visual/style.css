@@ -1,4 +1,46 @@
-body {
+/* -------------------- PÁGINA DE LOADING -------------------- */
+
+#body-loading { 
+    background-color:  #003B8B;
+}
+
+#informacoes-loading{
+    margin-top: 10%;
+}
+
+#reinaldo-loading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titulo-loading {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 5vmin;
+}
+
+.loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    animation: spinAnicamacao 1.5s linear infinite;
+}
+
+@keyframes spinAnicamacao {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* -------------------- KAMKE-CLICKER -------------------- */
+
+#body-index {
     background-image: url(imagens/reinaldoBackground.png);
     background-size:cover;
     overflow: hidden;

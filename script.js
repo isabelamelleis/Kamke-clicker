@@ -1,10 +1,19 @@
+// loading massa
+
+let tituloLoading = document.getElementById('titulo-loading');
+
+function loading() {
+    tituloLoading.innerText = 'Carregando...';
+    setTimeout(() => {
+        location.replace('index.html')
+    }, 3000)
+}
+
 //quantidade absoluta de naldocoins na gameplay do usuário
 let NALDOCOIN = 0;
 
-
 // botão do reinaldo
 const botaoKamkeClicker = document.getElementById('kamke-clicker');
-
 
 // "p" do html onde está a contagem dos naldocoins
 let naldoCoins = document.getElementById('NALDOCOINS');
@@ -15,12 +24,42 @@ botaoKamkeClicker.addEventListener('click', () => {
     naldoCoins.innerText = NALDOCOIN;
     if (NALDOCOIN >= 100) {
         desbloquearGustavo();
-    } 
+    }
     
     if (NALDOCOIN >= 300) {
         desbloquearRuan();
     }
 });
+
+// verifica se o jogador tem os NALDOCOINS necessários para comprar os itens da loja
+function verificarNaldocoinsNecessarios() {
+    if (NALDOCOIN < precoCursorValor) {
+        botaoComprarCursor.style.color = 'red';
+        botaoComprarCursor.style.fontWeight = 'bold' ;
+    } else {
+        botaoComprarCursor.style.color = 'black';
+        botaoComprarCursor.style.fontWeight = 'normal';
+    }
+
+    if (NALDOCOIN < precoGustavoValor) {
+        botaoBadzin.style.color = 'red';
+        botaoBadzin.style.fontWeight = 'bold' ;
+    } else {
+        botaoBadzin.style.color = 'black';
+        botaoBadzin.style.fontWeight = 'normal';
+    }
+
+    if (NALDOCOIN < precoRuanValor) {
+        botaoRuan.style.color = 'red';
+        botaoRuan.style.fontWeight = 'bold' ;
+    } else {
+        botaoRuan.style.color = 'black';
+        botaoRuan.style.fontWeight = 'normal';
+    }
+
+}
+setInterval(verificarNaldocoinsNecessarios, 0);
+
 
 // ------------------------------ EFEITOS SONÓROS ----------------------------
 
@@ -50,11 +89,15 @@ function RuanAudio() {
 }
 
 // ------------------------------ CURSOR -------------------------------------
-// primeira compra para CURSOR
+
+// Botão cursor
 const botaoComprarCursor = document.getElementById('compra-cursor');
+
+// Definindo as variáveis de valor e quantidade de cursores comprados
 let precoCursor = document.getElementById('preco-cursor');
 let precoCursorValor = 10;
 precoCursor.innerText = precoCursorValor;
+let quantCursor = 0;
 
 //cria uma variável e atribui o ID da mensagem no botão
 const mensagemCursorID = document.getElementById('mensagem-cursor-id');
@@ -72,7 +115,7 @@ botaoComprarCursor.addEventListener('mouseout', () => {
     mensagemCursorID.style.display = 'none';
 });
 
-let quantCursor = 0;
+// Compra do cursor
 botaoComprarCursor.addEventListener('click', function() {
     if (NALDOCOIN < precoCursorValor) {
         window.alert('TOMA NO TEU CU');
@@ -111,10 +154,18 @@ botaoComprarCursor.addEventListener('click', function() {
 }});
 
 // ------------------------------ GUSTAVO VENTURI ----------------------------------
+
+// Criando os botões do BADZIN bloqueado e desbloqueado
 const botaoBadzinBloqueado = document.getElementById('compra-gustavo-bloqueado');
 const botaoBadzin = document.getElementById('compra-gustavo');
 
-// Mensagem do botão badzin bloqueado
+// Definindo as variáveis de valor e quantidade de BADZINS comprados
+let precoGustavo = document.getElementById('preco-gustavo');
+let precoGustavoValor = 100;
+precoGustavo.innerHTML = precoGustavoValor;
+quantGustavo = 0;
+
+// Mensagem do botão BADZIN bloqueado
 const mensagemBadzinBloqueado = document.getElementById('mensagem-badzin-bloqueado-id');
 botaoBadzinBloqueado.addEventListener('mouseover', () => {
     timeoutBadzin = setTimeout(() => {
@@ -126,7 +177,7 @@ botaoBadzinBloqueado.addEventListener('mouseout', () => {
     mensagemBadzinBloqueado.style.display = 'none';
 })
 
-// Mensagem do botão badzin desbloqueado
+// Mensagem do botão BADZIN desbloqueado
 const mensagemBadzin = document.getElementById('mensagem-badzin-id');
 botaoBadzin.addEventListener('mouseover', () => {
     timeoutBadzin = setTimeout(() => { 
@@ -155,12 +206,7 @@ botaoBadzinBloqueado.addEventListener('click', function () {
     }
 });
 
-// primeira compra para BADZIN
-let precoGustavo = document.getElementById('preco-gustavo');
-let precoGustavoValor = 100;
-precoGustavo.innerHTML = precoGustavoValor;
-
-quantGustavo = 0;
+// Compra de BADZINS
 botaoBadzin.addEventListener('click', function() {
     
     if (NALDOCOIN < precoGustavoValor) {
@@ -173,26 +219,27 @@ botaoBadzin.addEventListener('click', function() {
         NALDOCOIN = NALDOCOIN - precoGustavoValor;
         naldoCoins.innerText = NALDOCOIN;
 
-        // aumenta o valor do badzin para uma próxima compra
-        precoGustavoValor = precoGustavoValor + Math.trunc((precoGustavoValor * 1.7));
+        // aumenta o valor do BADZIN para uma próxima compra
+        precoGustavoValor = precoGustavoValor + Math.trunc((precoGustavoValor * 1.2));
         precoGustavo.innerText = precoGustavoValor;
 
 
-        // faz aparecer a div com o cursor do badzin na tela após a primeira compra
+        // faz aparecer a div com o cursor do BADZIN na tela após a primeira compra
         let divBadzinComprado = document.getElementById('badzin-comprado');
         divBadzinComprado.style.display = 'flex';
         divBadzinComprado.classList.add('div-badzin-comprado');
         
-        // define a quantidade de badzins e mostra na tela
+        // define a quantidade de BADZINS e mostra na tela
         quantGustavo++;
 
-        //aumenta e mostra o número de badzins comprados
+        //aumenta e mostra o número de BADZINS comprados
         const stacksBadzins = document.getElementById('stacks-badzins');
         stacksBadzins.innerText = `${quantGustavo}x`;
     }
 })
 
 // --------------------------------- RUAN ---------------------------------
+
 // Criando os botões do ruan bloqueado e desbloqueado
 const botaoRuanBloqueado = document.getElementById('botao-ruan-bloqueado');
 const botaoRuan = document.getElementById('compra-ruan');
@@ -280,12 +327,10 @@ botaoRuan.addEventListener('click', () => {
     }
     setInterval(autoClick, 800)
 
-    if (quantRuan >= 5)
+    if (quantRuan >= 3)
         setInterval(autoClick, 500)
     // Futuramente adicionar o the midnight goober here
-    if (quantRuan >= 10)
+    if (quantRuan >= 5)
         setInterval(autoClick, 200)
 }
 })
-
-
