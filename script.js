@@ -32,6 +32,7 @@ botaoKamkeClicker.addEventListener('click', () => {
 });
 
 // verifica se o jogador tem os NALDOCOINS necessários para comprar os itens da loja
+
 function verificarNaldocoinsNecessarios() {
     if (NALDOCOIN < precoCursorValor) {
         botaoComprarCursor.style.color = 'red';
@@ -141,12 +142,13 @@ botaoComprarCursor.addEventListener('click', function() {
             NALDOCOIN++;
             naldoCoins.innerText = NALDOCOIN;
         }
-        setInterval(autoClick, 1500);
+        setInterval(autoClick, 2000);
         if (quantCursor >= 10);
-            setInterval(autoClick, 1000);
-        
+        setInterval(autoClick, 1000);
+
         // aumenta a quantidade de cursores possuídos a cada compra
         quantCursor++;
+
 
         // aumenta e mostra o numero de cursores comprados
         const stacksDeCursors = document.getElementById('stacks-cursors');
@@ -297,9 +299,7 @@ botaoRuan.addEventListener('click', () => {
     window.alert('TOMA NO TEU CU')
     }
     else {
-
     RuanAudio();
-
     // altera a contagem dos NALDOCOINS depois da compra
     NALDOCOIN = NALDOCOIN - precoRuanValor;
     naldoCoins.innerText = NALDOCOIN;
@@ -331,6 +331,6 @@ botaoRuan.addEventListener('click', () => {
         setInterval(autoClick, 500)
     // Futuramente adicionar o the midnight goober here
     if (quantRuan >= 5)
-        setInterval(autoClick, 200)
+        setInterval(autoClick, 100)
 }
 })
