@@ -22,18 +22,20 @@ let naldoCoins = document.getElementById('NALDOCOINS');
 botaoKamkeClicker.addEventListener('click', () => {
     NALDOCOIN = NALDOCOIN + 1 + quantGustavo;
     naldoCoins.innerText = NALDOCOIN;
+    verificarDesbloqueios();
+});
+
+function verificarDesbloqueios() {
     if (NALDOCOIN >= 100) {
         desbloquearGustavo();
     }
-    
     if (NALDOCOIN >= 300) {
         desbloquearRuan();
     }
-});
+}
 
 
 // verifica se o jogador tem os NALDOCOINS necessários para comprar os itens da loja
-
 function verificarNaldocoinsNecessarios() {
     if (NALDOCOIN < precoCursorValor) {
         botaoComprarCursor.style.color = 'red';
@@ -142,10 +144,13 @@ botaoComprarCursor.addEventListener('click', function() {
         function autoClick() {
             NALDOCOIN++;
             naldoCoins.innerText = NALDOCOIN;
+            verificarDesbloqueios();
         }
         setInterval(autoClick, 2000);
-        if (quantCursor >= 10);
-        setInterval(autoClick, 1000);
+        if (quantCursor >= 10) {
+            setInterval(autoClick, 1000);
+            verificarDesbloqueios();
+        };
 
         // aumenta a quantidade de cursores possuídos a cada compra
         quantCursor++;
@@ -238,6 +243,13 @@ botaoBadzin.addEventListener('click', function() {
         //aumenta e mostra o número de BADZINS comprados
         const stacksBadzins = document.getElementById('stacks-badzins');
         stacksBadzins.innerText = `${quantGustavo}x`;
+
+        if (quantGustavo >= 5) {
+            const pigzin = document.getElementById('badzin-pig-esta-vindo');
+            pigzin.src = 'visual/imagens/badzinPig.png';
+            const nomePigzin = document.getElementById('nome-badzin');
+            nomePigzin.innerText = 'Pigzin';
+        }
     }
 })
 
@@ -325,14 +337,23 @@ botaoRuan.addEventListener('click', () => {
     function autoClick () {
         NALDOCOIN++;
         naldoCoins.innerText = NALDOCOIN;
+        verificarDesbloqueios();
     }
-    setInterval(autoClick, 800)
+    setInterval(autoClick, 800); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK
+    if (quantRuan >= 3) {
+        setInterval(autoClick, 500);
+    }
+    if (quantRuan >= 5) {
+        setInterval(autoClick, 100);
 
-    if (quantRuan >= 3)
-        setInterval(autoClick, 500)
-    // Futuramente adicionar o the midnight goober here
-    if (quantRuan >= 5)
-        setInterval(autoClick, 100)
+        // transforma o goober em midnight goober
+        const imagemGoober = document.getElementById('midnight-goober-esta-vindo');
+        imagemGoober.src = 'visual/imagens/midnightGoober.png';
+        const midnightGoober = document.getElementById('nome-goober');
+        midnightGoober.innerText = 'The Midnight Goober';
+        const mensagemMidnight = document.getElementById('mensagem-ruan-desbloqueado');
+        mensagemMidnight.innerText = 'MIDNIGHT GOOBER YEAH BEACHES 🤘🤘🤘';
+    }
 }
 })
 
