@@ -1,4 +1,4 @@
-// loading massa
+// ------------------------------ LOADING ----------------------------
 
 let tituloLoading = document.getElementById('titulo-loading');
 
@@ -30,6 +30,7 @@ botaoKamkeClicker.addEventListener('click', () => {
         desbloquearRuan();
     }
 });
+
 
 // verifica se o jogador tem os NALDOCOINS necessários para comprar os itens da loja
 
@@ -107,7 +108,7 @@ const mensagemCursorID = document.getElementById('mensagem-cursor-id');
 botaoComprarCursor.addEventListener('mouseover', () => {
     timeoutCursor = setTimeout(() => {
     mensagemCursorID.style.display = 'block';
-    }, 500);
+    }, 200);
 });
 
 // quando o mouse sai de cima do botão, ele volta a ficar desaparecido
@@ -172,7 +173,7 @@ const mensagemBadzinBloqueado = document.getElementById('mensagem-badzin-bloquea
 botaoBadzinBloqueado.addEventListener('mouseover', () => {
     timeoutBadzin = setTimeout(() => {
         mensagemBadzinBloqueado.style.display = 'block';
-    },500)
+    },200)
 });
 botaoBadzinBloqueado.addEventListener('mouseout', () => {
     clearTimeout(timeoutBadzin);
@@ -184,7 +185,7 @@ const mensagemBadzin = document.getElementById('mensagem-badzin-id');
 botaoBadzin.addEventListener('mouseover', () => {
     timeoutBadzin = setTimeout(() => { 
             mensagemBadzin.style.display = 'block';
-        }, 500);
+        }, 200);
 })
 botaoBadzin.addEventListener('mouseout', () => {
     clearTimeout(timeoutBadzin);
@@ -257,7 +258,7 @@ const mensagemRuanBloqueado = document.getElementById('mensagem-ruan-bloqueado')
 botaoRuanBloqueado.addEventListener('mouseover',() => {
     timerRuan = setTimeout(() => {
         mensagemRuanBloqueado.style.display = 'block';
-    }, 500);
+    }, 200);
 });
 botaoRuanBloqueado.addEventListener('mouseout',() => {
     clearTimeout(timerRuan);
@@ -334,3 +335,22 @@ botaoRuan.addEventListener('click', () => {
         setInterval(autoClick, 100)
 }
 })
+
+// ------------------------------ Atulizar Naldocoins no título ----------------------------
+
+const naldoCoinsValor = naldoCoins.innerText;
+
+function atualizarTitulo() { // coloca o valor dos NALDOCOINS no título da página
+    document.title = `${naldoCoinsValor} - Kamke Clicker Demo`
+};
+
+atualizarTitulo();
+
+// Observar as mudanças no valor do naldoCoins
+const observer = new MutationObserver(() => {
+  atualizarTitulo();
+});
+
+observer.observe(naldoCoins, {
+  characterData: true
+});
