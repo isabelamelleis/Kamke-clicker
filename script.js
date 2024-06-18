@@ -9,6 +9,8 @@ function loading() {
     }, 3000)
 }
 
+// -------------- FUNCIONALIDADES BOTÃO KAMKE CLICKER -----------------
+
 //quantidade absoluta de naldocoins na gameplay do usuário
 let NALDOCOIN = 0;
 
@@ -33,6 +35,24 @@ function verificarDesbloqueios() {
         desbloquearRuan();
     }
 }
+
+// Fazer uma imagem aparecer quando se é clicado no botão do Kamke
+
+var imagemClique = document.getElementById('imagem-clique');
+
+botaoKamkeClicker.addEventListener('click', (e) => {
+   const mouseX = e.clientX; 
+   const mouseY = e.clientY;
+
+   imagemClique.style.left = `${mouseX}px`;
+   imagemClique.style.top = `${mouseY}px`;
+
+    imagemClique.style.display = 'block';
+
+    setTimeout(() => {
+        imagemClique.style.display = 'none';
+    }, 1000);
+});
 
 
 // verifica se o jogador tem os NALDOCOINS necessários para comprar os itens da loja
@@ -249,6 +269,8 @@ botaoBadzin.addEventListener('click', function() {
             pigzin.src = 'visual/imagens/badzinPig.png';
             const nomePigzin = document.getElementById('nome-badzin');
             nomePigzin.innerText = 'Pigzin';
+            const mensagemPigzin = document.getElementById('mensagem-badzin-id');
+            mensagemPigzin.innerText = 'Pigzin.';
         }
     }
 })

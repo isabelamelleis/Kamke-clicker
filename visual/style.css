@@ -51,7 +51,7 @@
 }
 
 .titulo-e-subtitulo {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Poetsen One", sans-serif;
     color: white;
     text-align: center;
 }
@@ -82,6 +82,11 @@ h1 {
     padding-top: 2px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
+}
+
+#imagem-clique {
+    display: none;
+    position: absolute;
 }
 
 #div-botao-kamke-clicker {
