@@ -40,10 +40,12 @@ function verificarDesbloqueios() {
 
 var imagemClique = document.getElementById('imagem-clique');
 
-botaoKamkeClicker.addEventListener('click', (e) => {
-   const mouseX = e.clientX; 
-   const mouseY = e.clientY;
+botaoKamkeClicker.addEventListener('click', (evento) => {
+    // Coleta a posição do mouse
+   const mouseX = evento.clientX; 
+   const mouseY = evento.clientY;
 
+   // Posiciona a imagem na posição do mouse
    imagemClique.style.left = `${mouseX}px`;
    imagemClique.style.top = `${mouseY}px`;
 
