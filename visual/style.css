@@ -87,6 +87,8 @@ h1 {
 #imagem-clique {
     display: none;
     position: absolute;
+    z-index: 1000;
+    pointer-events: none;
 }
 
 #div-botao-kamke-clicker {

@@ -37,7 +37,6 @@ function verificarDesbloqueios() {
 }
 
 // Fazer uma imagem aparecer quando se é clicado no botão do Kamke
-
 var imagemClique = document.getElementById('imagem-clique');
 
 botaoKamkeClicker.addEventListener('click', (evento) => {
@@ -45,15 +44,17 @@ botaoKamkeClicker.addEventListener('click', (evento) => {
    const mouseX = evento.clientX; 
    const mouseY = evento.clientY;
 
-   // Posiciona a imagem na posição do mouse
-   imagemClique.style.left = `${mouseX}px`;
-   imagemClique.style.top = `${mouseY}px`;
 
-    imagemClique.style.display = 'block';
+   // Posiciona a imagem na posição do mouse
+   imagemClique.style.left = `${mouseX-38}px`;
+   imagemClique.style.top = `${mouseY-60}px`;
+
+    
+   imagemClique.style.display = 'block';
 
     setTimeout(() => {
         imagemClique.style.display = 'none';
-    }, 1000);
+    }, 1500);
 });
 
 
@@ -168,7 +169,7 @@ botaoComprarCursor.addEventListener('click', function() {
             naldoCoins.innerText = NALDOCOIN;
             verificarDesbloqueios();
         }
-        setInterval(autoClick, 2000);
+        setInterval(autoClick, 1500);
         if (quantCursor >= 10) {
             setInterval(autoClick, 1000);
             verificarDesbloqueios();
@@ -306,7 +307,7 @@ const mensagemRuanDesbloqueado = document.getElementById('mensagem-ruan-desbloqu
 botaoRuan.addEventListener('mouseover', () => {
     timerRuan = setTimeout(() => {
         mensagemRuanDesbloqueado.style.display = 'block';
-    },500)
+    },200)
 })
 botaoRuan.addEventListener('mouseout', () => {
     clearTimeout(timerRuan);
@@ -363,7 +364,7 @@ botaoRuan.addEventListener('click', () => {
         naldoCoins.innerText = NALDOCOIN;
         verificarDesbloqueios();
     }
-    setInterval(autoClick, 800); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK
+    setInterval(autoClick, 800); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
     if (quantRuan >= 3) {
         setInterval(autoClick, 500);
     }
@@ -381,7 +382,7 @@ botaoRuan.addEventListener('click', () => {
 }
 })
 
-// ------------------------------ Atulizar Naldocoins no título ----------------------------
+// ------------------------------ Atualizar Naldocoins no título ----------------------------
 
 const naldoCoinsValor = naldoCoins.innerText;
 
