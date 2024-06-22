@@ -364,9 +364,9 @@ botaoRuan.addEventListener('click', () => {
         naldoCoins.innerText = NALDOCOIN;
         verificarDesbloqueios();
     }
-    setInterval(autoClick, 800); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
+    setInterval(autoClick, 600); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
     if (quantRuan >= 3) {
-        setInterval(autoClick, 500);
+        setInterval(autoClick, 400);
     }
     if (quantRuan >= 5) {
         setInterval(autoClick, 100);
