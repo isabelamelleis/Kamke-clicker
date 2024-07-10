@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamke Clicker DEMO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="visual/style.css">
+    <script defer src="script.js"></script>
+    <link rel="shortcut icon" href="visual/imagens/reinaldo_icon.jpg" type="image/x-icon">
+</head>
+<body id="body-index">
+    <section id="miolo-site">
+        <h1 class="titulo-e-subtitulo">BEM-VINDO AO KAMKE CLICKER!</h1>
+        <h3 class="titulo-e-subtitulo">Clique no Reinaldo para gerar Naldocoins</h3>
+        <div id="div-mostrar-naldocoins">
+            <img src="visual/imagens/NALDOCOINS.gif" alt="NALDOCOINS">
+            <p id="naldocoins-texto">
+                Naldocoins:
+            </p>
+            <p id="NALDOCOINS">
+                0
+            </p>
+            <img src="visual/imagens/NALDOCOINS.gif" alt="NALDOCOINS">
+            <img id="imagem-clique" src="visual/imagens/NALDOCOINS.gif" alt="NALDOCOINS">
+            <br>
+        </div>
+        <div id="div-botao-kamke-clicker">
+            <button id="kamke-clicker"></button>
+            <!--ITENS COMPRADOS AO LADO DO BOTAO PRINCIPAL -->
+            <div id="div-itens-comprados-ao-lado-botao-kamke">
+                <div class="display-none" id="cursor-reinaldo-comprado">
+                    <p id="stacks-cursors">1x</p>
+                    <img src="visual/imagens/reinaldo_cursor.png" alt="Cursor do Reinaldo">
+                </div>
+                <div class="display-none" id="badzin-comprado">
+                    <p id="stacks-badzins">1x</p>
+                    <img id="badzin-cursor" src="visual/imagens/badzin_cursor.png" alt="Badzin do Reinaldo">
+                </div>
+                <div class="display-none" id="ruan-comprado">
+                    <p id="stacks-ruans">1x</p>
+                    <img src="visual/imagens/Goober_hammer.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="loja"> <!-- LOJA -->
+        <div id="loja-logo"><img id="imagem-logo-loja" src="visual/imagens/loja.png" alt="Logo da loja"></div>
+        <!--CURSOR-->
+        <div class="display-flex-mensagens-e-botoes">
+            <button id="compra-cursor">
+                <img id="cursor-imagem" src="visual/imagens/imagemCursor.png" alt="Cursor do Reinaldo">Cursor | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-cursor">10</p>
+            </button>
+            <div id="mensagem-cursor-id" class="mensagem-explicacao-botoes-desbloqueados">Clica para você a cada um segundo (e meio)</div>
+        </div>
+        <!--BADZIN-->
+        <div id="badzin-nao-desbloqueado" class="display-flex-mensagens-e-botoes">  <!--BADZIN NÃO DESBLOQUEADO-->
+            <button class="botao-gustavo" id="compra-gustavo-bloqueado">
+                <img class="imagem-gustavo-botao" src="visual/imagens/badzinTranparente.png" alt="???">who the fuck is this bro?
+            </button>
+            <div id="mensagem-badzin-bloqueado-id" class="mensagem-explicacao-botoes-bloqueados">Aumente suas vadias primeiro</div>
+        </div>
+        <div id="badzin-desbloqueado" class="display-none"> <!--BADZIN DESBLOQUEADO-->
+            <button class="botao-gustavo" id="compra-gustavo">
+                <img id="badzin-pig-esta-vindo" class="imagem-gustavo-botao" src="visual/imagens/badzin.png" alt="Gustavo Venturi vulgo Badzin"><p id="nome-badzin">Badzin</p> | <img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"> <p id="preco-gustavo">100</p>
+            </button>
+            <div id="mensagem-badzin-id" class="mensagem-explicacao-botoes-desbloqueados">Aumenta suas vadias (seus cliques no botão)</div>
+        </div>
+        <!--RUAN-->
+        <div id="ruan-bloqueado" class="display-flex-mensagens-e-botoes">  <!--RUAN BLOQUEADO-->
+            <button class="botao-ruan" id="botao-ruan-bloqueado">
+                <img class="imagem-ruan-botao" src="visual/imagens/ruanBloqueado.png" alt="???">justin bieber?
+            </button>
+            <div id="mensagem-ruan-bloqueado" class="mensagem-explicacao-botoes-bloqueados">Aumente suas vadias primeiro</div>
+        </div>
+        <div id="ruan-desbloqueado" class="display-none">  <!--RUAN DESBLOQUEADO-->
+            <button class="botao-ruan" id="compra-ruan">
+                <img id="midnight-goober-esta-vindo" class="imagem-ruan-botao" src="visual/imagens/ruan.png" alt="OMGGG RUAN"><p id="nome-goober">Goober</p> |<img class="naldocoin-preview" src="visual/imagens/NALDOCOINS.png" alt="NALDOCOINS"><p id="preco-ruan">300</p>
+            </button>
+            <div id="mensagem-ruan-desbloqueado" class="mensagem-explicacao-botoes-desbloqueados">Gera Naldocoins (Its the Goober)</div>
+        </div>
+    </div>
+</body>
+</html>
