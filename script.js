@@ -145,7 +145,7 @@ botaoComprarCursor.addEventListener('mouseout', () => {
 // Compra do cursor
 botaoComprarCursor.addEventListener('click', function() {
     if (NALDOCOIN < precoCursorValor) {
-        window.alert('TOMA NO TEU CU');
+        window.alert('Falta Kamke Coins :(');
     } else {
 
         // altera a contagem dos NALDOCOINS depois da compra
@@ -241,7 +241,7 @@ botaoBadzinBloqueado.addEventListener('click', function () {
 botaoBadzin.addEventListener('click', function() {
     
     if (NALDOCOIN < precoGustavoValor) {
-        window.alert('TOMA NO TEU CU');
+        window.alert('Falta Kamke Coins :(');
     } else {
 
         BadzinAudio();
@@ -327,14 +327,14 @@ function desbloquearRuan() {
 // Mensagem de erro pro ruan bloqueado
 botaoRuanBloqueado.addEventListener('click', () => {
     if (NALDOCOIN < precoRuanValor)
-        window.alert('TIRA SORAA 😭😭😭 ')
+        window.alert(' 😭😭😭 ')
 })
 
 // COMPRA DO RUAN
 botaoRuan.addEventListener('click', () => {
     
     if (NALDOCOIN < precoRuanValor) {
-    window.alert('TOMA NO TEU CU')
+    window.alert('Falta Kamke Coins :(')
     }
     else {
     RuanAudio();
@@ -377,7 +377,7 @@ botaoRuan.addEventListener('click', () => {
         const midnightGoober = document.getElementById('nome-goober');
         midnightGoober.innerText = 'The Midnight Goober';
         const mensagemMidnight = document.getElementById('mensagem-ruan-desbloqueado');
-        mensagemMidnight.innerText = 'MIDNIGHT GOOBER YEAH BEACHES 🤘🤘🤘';
+        mensagemMidnight.innerText = 'MIDNIGHT GOOBER YEAH GIRLS 🤘🤘🤘';
     }
 }
 })
