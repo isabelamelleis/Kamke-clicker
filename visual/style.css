@@ -261,7 +261,7 @@ h1 {
     }
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 1300px) {
     .display-flex-mensagens-e-botoes {
         button {
             font-size: 60%;
@@ -269,10 +269,18 @@ h1 {
     }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 950px) {
     .display-flex-mensagens-e-botoes {
         button {
             font-size: 50%;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .display-flex-mensagens-e-botoes {
+        button {
+            font-size: 40%;
         }
     }
 }

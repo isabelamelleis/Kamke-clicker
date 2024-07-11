@@ -14,6 +14,12 @@ function loading() {
 //quantidade absoluta de naldocoins na gameplay do usuário
 let NALDOCOIN = 0;
 
+let NALDOCOINST = document.getElementById('NALDOCOINST')
+
+function mudaTitulo3000() {
+    NALDOCOINST.innerText = `${NALDOCOIN} - Kamke Clicker DEMO`;
+}
+
 // botão do reinaldo
 const botaoKamkeClicker = document.getElementById('kamke-clicker');
 
@@ -25,13 +31,14 @@ botaoKamkeClicker.addEventListener('click', () => {
     NALDOCOIN = NALDOCOIN + 1 + quantGustavo;
     naldoCoins.innerText = NALDOCOIN;
     verificarDesbloqueios();
+    mudaTitulo3000();
 });
 
 function verificarDesbloqueios() {
-    if (NALDOCOIN >= 100) {
+    if (NALDOCOIN >= 1) {
         desbloquearGustavo();
     }
-    if (NALDOCOIN >= 300) {
+    if (NALDOCOIN >= 3) {
         desbloquearRuan();
     }
 }
@@ -168,11 +175,13 @@ botaoComprarCursor.addEventListener('click', function() {
             NALDOCOIN++;
             naldoCoins.innerText = NALDOCOIN;
             verificarDesbloqueios();
+            mudaTitulo3000();
         }
         setInterval(autoClick, 1500);
         if (quantCursor >= 10) {
             setInterval(autoClick, 1000);
             verificarDesbloqueios();
+            mudaTitulo3000();
         };
 
         // aumenta a quantidade de cursores possuídos a cada compra
@@ -363,13 +372,14 @@ botaoRuan.addEventListener('click', () => {
         NALDOCOIN++;
         naldoCoins.innerText = NALDOCOIN;
         verificarDesbloqueios();
+        mudaTitulo3000();
     }
-    setInterval(autoClick, 600); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
+    setInterval(autoClick, 500); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
     if (quantRuan >= 3) {
-        setInterval(autoClick, 400);
+        setInterval(autoClick, 300);
     }
     if (quantRuan >= 5) {
-        setInterval(autoClick, 100);
+        setInterval(autoClick, 90);
 
         // transforma o goober em midnight goober
         const imagemGoober = document.getElementById('midnight-goober-esta-vindo');
@@ -384,19 +394,4 @@ botaoRuan.addEventListener('click', () => {
 
 // ------------------------------ Atualizar Naldocoins no título ----------------------------
 
-const naldoCoinsValor = naldoCoins.innerText;
-
-function atualizarTitulo() { // coloca o valor dos NALDOCOINS no título da página
-    document.title = `${naldoCoinsValor} - Kamke Clicker Demo`
-};
-
-atualizarTitulo();
-
-// Observar as mudanças no valor do naldoCoins
-const observer = new MutationObserver(() => {
-  atualizarTitulo();
-});
-
-observer.observe(naldoCoins, {
-  characterData: true
-});
+const NALDOCOINSTITULO = document.getElementById('NALDOCOINST')
