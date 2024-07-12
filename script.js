@@ -177,9 +177,9 @@ botaoComprarCursor.addEventListener('click', function() {
             verificarDesbloqueios();
             mudaTitulo3000();
         }
-        setInterval(autoClick, 1500);
+        setInterval(autoClick, 1000);
         if (quantCursor >= 10) {
-            setInterval(autoClick, 1000);
+            setInterval(autoClick, 800);
             verificarDesbloqueios();
             mudaTitulo3000();
         };
@@ -379,7 +379,7 @@ botaoRuan.addEventListener('click', () => {
         setInterval(autoClick, 300);
     }
     if (quantRuan >= 5) {
-        setInterval(autoClick, 90);
+        setInterval(autoClick, 50);
 
         // transforma o goober em midnight goober
         const imagemGoober = document.getElementById('midnight-goober-esta-vindo');
