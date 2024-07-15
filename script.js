@@ -35,10 +35,10 @@ botaoKamkeClicker.addEventListener('click', () => {
 });
 
 function verificarDesbloqueios() {
-    if (NALDOCOIN >= 1) {
+    if (NALDOCOIN >= 100) {
         desbloquearGustavo();
     }
-    if (NALDOCOIN >= 3) {
+    if (NALDOCOIN >= 300) {
         desbloquearRuan();
     }
 }
@@ -262,7 +262,6 @@ botaoBadzin.addEventListener('click', function() {
         // aumenta o valor do BADZIN para uma próxima compra
         precoGustavoValor = precoGustavoValor + Math.trunc((precoGustavoValor * 1.2));
         precoGustavo.innerText = precoGustavoValor;
-
 
         // faz aparecer a div com o cursor do BADZIN na tela após a primeira compra
         let divBadzinComprado = document.getElementById('badzin-comprado');

@@ -98,29 +98,50 @@ h1 {
     justify-content: center;
 }
 
-#kamke-clicker{
-    border-radius: 20px;
+#kamke-clicker {
+    position: relative; /*O botão se tornou "relative" para poder posicionar o '::before' corretamente encima desse botão, dando a impressão que eles estão juntos*/
+    border-radius: 50%;
     border: none;
-    background-image: url(../visual/imagens/reinaldo1.jpg);
-    background-size: 100%;
     width: 100%;
     max-width: 20%;
-    height: 25vmax;
-    background-repeat: no-repeat;
+    height: 20vmax;
     cursor: pointer;
     box-shadow: 8px 8px 0px 0px rgb(145, 142, 18);
-    transition: 0.2s all;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;  /*Garente que o elemento '::before' fique dentro dos limites do botão e não o ultrapasse*/
+    background: none;
 }
 
-#kamke-clicker:hover{
-    transform: scale(1.05);
+#kamke-clicker::before { /*::before funciona para você poder adicionar conteúdos na sua página antes do conteúdo que já está escrito, sem adicionar outro documento*/
+    content: ""; /*Mesmo que você não insira nenhum conteúdo, sempre que você usar ::before ou ::after você precisa declarar o 'content'*/
+    position: absolute;
+    top: 0; /*Essa sequência de 'top, left, right, bottom: 0' define que esse elemento ::before vai sempre se redimencionar de acordo com o tamanho do seu elemento pai, que no caso é o botão kamke-clicker*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../visual/imagens/reinaldo2.jpg);
+    background-position: 0% 35%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: -1; /*Faz com que o '::before' obrigatoriamente fique atrás do botão kamke-clicker*/
+    animation: spin 50s linear infinite;
 }
 
+
+#kamke-clicker:hover {
+    transform: scale(1.05) rotate(0deg);
+}
 
 #kamke-clicker:active {
-    transform: translateY(5px);
+    transform: translateY(5px) rotate(0deg);
     box-shadow: 13px 13px 0px 0px rgb(77, 56, 0)
 }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 .div-cursor-comprado { /*imagem do cursor comprado ao lado do botão kamke*/
     display: flex;
@@ -138,7 +159,7 @@ h1 {
     display: flex;
     align-items: center;
     right: 30%;
-    bottom: 40%;
+    bottom: 30%;
     position: absolute;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -152,7 +173,7 @@ h1 {
     display: flex;
     align-items: center;
     right: 30%;
-    bottom: 10%;
+    bottom: -5%;
     position: absolute;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -187,32 +208,48 @@ h1 {
     display: flex;
     justify-content: center;
     position: relative;
+    
     button {
-        display:flex;
+        display: flex;
+        justify-content: flex-start;
         align-items: center;
-        justify-content: space-around;
-        max-width: 55%;
+        width: 100%;
         height: auto;
+        padding-right: 50%;
         border-radius: 15px;
-        font-size: 80%;
+        font-size: 1vw;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        p {
+            margin: 5%;
+        }
 
+        .div-imagens-produtos-loja {
+            width: 60%;
+        }
+        
+        .div-precos-produtos-loja {
+            width: 40%;
+            .preco-e-naldocoins-botoes {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+            }
+        }
+        
         img {
-            max-width: 50%;
+            width: 100%;
+            height: auto;
         }
 
         .naldocoin-preview {
-            width: 50%;
+            width: 30%;
             height: auto;
-            margin-right: 10%;
+            margin-right: 5%;
         }
+            
     }
-}
-
-.preco-e-naldocoins-botoes {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
 }
 
 #compra-cursor:hover {
@@ -232,7 +269,7 @@ h1 {
     display: none;
     position: absolute;
     top: 20%;
-    right: 78%; 
+    right: 100%; 
     background-color: black;
     color: #fff;
     height: fit-content;
@@ -248,7 +285,7 @@ h1 {
     display: none;
     position:absolute;
     top: 20%;
-    right:78%;
+    right:100%;
     background-color: black;
     color: #ff0000;
     height: fit-content;
@@ -262,15 +299,7 @@ h1 {
 
 /*--------------------- RESPONSIVIDADE ------------------- */
 
-@media (max-width: 1700px)  {
-    #kamke-clicker {
-        height: 35vmax;
-        max-width: 25%;
-        background-image: url(../visual/imagens/reinaldo1.jpg);
-    }
-}
-
-@media (max-width: 1300px) {
+/*@media (max-width: 1300px) {
     .display-flex-mensagens-e-botoes {
         button {
             font-size: 60%;
@@ -292,4 +321,4 @@ h1 {
             font-size: 40%;
         }
     }
-}
+}*/
