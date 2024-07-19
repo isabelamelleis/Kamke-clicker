@@ -99,7 +99,7 @@ setInterval(verificarNaldocoinsNecessarios, 0);
 
 // Audio Cursor
 const audioBotaoBomDia = new Audio();
-audioBotaoBomDia.src='../visual/audios/bom_dia.mp3'
+audioBotaoBomDia.src='/visual/audios/bom_dia.mp3'
 
 function botaoSomBomDia() {
     audioBotaoBomDia.currentTime = 0;
@@ -107,7 +107,7 @@ function botaoSomBomDia() {
 }
 //Audio Badzin
 const audioBotao2 = new Audio();
-audioBotao2.src='../visual/audios/badzin_audio.mp3'
+audioBotao2.src='/visual/audios/badzin_audio.mp3'
 
 function BadzinAudio() {
     audioBotao2.currentTime = 0;
@@ -115,7 +115,7 @@ function BadzinAudio() {
 }
 //Audio Ruan
 const audioBotao3 = new Audio();
-audioBotao3.src='../visual/audios/ruan_audio.mp3'
+audioBotao3.src='/visual/audios/ruan_audio.mp3'
 
 function RuanAudio() {
     audioBotao3.currentTime = 0;
