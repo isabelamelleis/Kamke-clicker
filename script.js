@@ -351,7 +351,7 @@ botaoRuan.addEventListener('click', () => {
     naldoCoins.innerText = NALDOCOIN;
 
     // aumenta o valor do goober para uma próxima compra
-    precoRuanValor = Math.trunc(precoRuanValor+(precoRuanValor * 2));
+    precoRuanValor = Math.trunc(precoRuanValor+(precoRuanValor * 1.2));
     precoRuan.innerText = precoRuanValor;
 
     // faz aparecer a div com o ruan na tela após a primeira compra
@@ -373,12 +373,12 @@ botaoRuan.addEventListener('click', () => {
         verificarDesbloqueios();
         mudaTitulo3000();
     }
-    setInterval(autoClick, 500); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
+    setInterval(autoClick, 300); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
     if (quantRuan >= 3) {
-        setInterval(autoClick, 300);
+        setInterval(autoClick, 100);
     }
     if (quantRuan >= 5) {
-        setInterval(autoClick, 50);
+        setInterval(autoClick, 20);
 
         // transforma o goober em midnight goober
         const imagemGoober = document.getElementById('midnight-goober-esta-vindo');
