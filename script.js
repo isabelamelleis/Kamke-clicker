@@ -179,7 +179,7 @@ botaoComprarCursor.addEventListener('click', function() {
         }
         setInterval(autoClick, 1000);
         if (quantCursor >= 10) {
-            setInterval(autoClick, 800);
+            setInterval(autoClick, 300);
             verificarDesbloqueios();
             mudaTitulo3000();
         };
@@ -375,7 +375,7 @@ botaoRuan.addEventListener('click', () => {
     }
     setInterval(autoClick, 300); //VERIFICAR REDUNDÂNCIA DESSE AUTOCLICK <- "Acho que ta safe" Lorenzo 18/06/2024
     if (quantRuan >= 3) {
-        setInterval(autoClick, 100);
+        setInterval(autoClick, 50);
     }
     if (quantRuan >= 5) {
         setInterval(autoClick, 20);
