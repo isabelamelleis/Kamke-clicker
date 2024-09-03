@@ -115,6 +115,7 @@ h3 {
     background: none;
 }
 
+/*----------------------------------------------------------------------------------*/
 #kamke-clicker::before { /*::before funciona para você poder adicionar conteúdos na sua página antes do conteúdo que já está escrito, sem adicionar outro documento*/
     content: ""; /*Mesmo que você não insira nenhum conteúdo, sempre que você usar ::before ou ::after você precisa declarar o 'content'*/
     position: absolute;
@@ -128,9 +129,28 @@ h3 {
     background-repeat: no-repeat;
     border-radius: 50%;
     z-index: -1; /*Faz com que o '::before' obrigatoriamente fique atrás do botão kamke-clicker*/
-    animation: spin 50s linear infinite;
+    animation: var(--somespin, spin) var(--sometime, 50s) var(--sometype, linear) var(--somerepeation, infinite);
+}
+/*----------------------------------------------------------------------------------*/
+
+.bonus_title{
+    color: black;
+    animation: pulse 1s linear infinite;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); 
+         color: red;}
+    25% { transform: scale(1.25); 
+         color: rgb(255, 0, 255);}
+    50% { transform: scale(1.5);
+         color: rgb(47, 0, 255);}
+    75% { transform: scale(1.25); 
+         color: rgb(0, 255, 34);}
+    100% { transform: scale(1);
+         color: red;}
+
+}
 
 #kamke-clicker:hover {
     transform: scale(1.05) rotate(0deg);
@@ -144,7 +164,7 @@ h3 {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
 .div-cursor-comprado { /*imagem do cursor comprado ao lado do botão kamke*/
     display: flex;

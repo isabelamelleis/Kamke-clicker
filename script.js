@@ -9,16 +9,89 @@ function loading() {
     }, 3000)
 }
 
+
+
 // -------------- FUNCIONALIDADES BOTÃO KAMKE CLICKER -----------------
 
 //quantidade absoluta de naldocoins na gameplay do usuário
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function bonus_time() {
+
+    var bonus_title = document.getElementsByClassName('bonus_title')[0]
+
+    sec = Math.floor(Math.random() * 360) + 180
+
+    var old_clickValue = clickValue
+
+    multiplier = Math.floor(Math.random() * 4) + 0
+
+    await sleep(sec * 1000);
+
+    window.alert("bonus time")
+
+    kamke = document.getElementById('kamke-clicker');
+
+    switch(multiplier) {
+        case 0:
+            multiplier = -1
+            clickValue = -1
+            kamke.style.setProperty('--sometime', '80s') 
+          break;
+        case 1:
+            multiplier = 2
+            clickValue = clickValue * 2
+            kamke.style.setProperty('--sometime', '8s') 
+          break;
+        case 2:
+            clickValue = clickValue * 2
+            kamke.style.setProperty('--sometime', '8s') 
+        break;
+        case 3:
+            clickValue = clickValue * 3
+            kamke.style.setProperty('--sometime', '4s') 
+        break;
+        case 4:
+            clickValue = clickValue * 4
+            kamke.style.setProperty('--sometime', '4s') 
+        break;
+        case 5:
+            clickValue = clickValue * 5
+            kamke.style.setProperty('--sometime', '0.2s') 
+        break;
+        default:
+
+          
+      } 
+
+    bonus_title.innerHTML = 'Bonus Time: X' + multiplier
+
+    await sleep(30 * 1000);
+
+    bonus_title.innerHTML = ""
+
+    kamke.style.setProperty('--sometime', '50s') 
+
+    clickValue = old_clickValue
+
+    bonus_time()
+}
+
+
+
 let NALDOCOIN = 0;
+
+var clickValue = 1;
 
 let NALDOCOINST = document.getElementById('NALDOCOINST')
 
 function mudaTitulo3000() {
     NALDOCOINST.innerText = `${NALDOCOIN} - Kamke Clicker DEMO`;
 }
+
+bonus_time()
 
 // botão do reinaldo
 const botaoKamkeClicker = document.getElementById('kamke-clicker');
@@ -28,7 +101,7 @@ let naldoCoins = document.getElementById('NALDOCOINS');
 
 // contagem dos clicks para contabilizar mais naldocoins
 botaoKamkeClicker.addEventListener('click', () => {
-    NALDOCOIN = NALDOCOIN + 1 + quantGustavo;
+    NALDOCOIN = NALDOCOIN + clickValue + quantGustavo;
     naldoCoins.innerText = NALDOCOIN;
     verificarDesbloqueios();
     mudaTitulo3000();
